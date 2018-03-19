@@ -1,0 +1,19 @@
+version: "2"
+
+services:
+  eosiod:
+    image: kkarty/eos:latest
+    command: /opt/eos/bin/start_eosd.sh
+    ports:
+      - 8888:8888
+      - 9876:9876
+    expose:
+      - "8888"
+    volumes:
+      - /home/karthik/eos-docker/data-dir:/opt/eos/data-dir
+      - /home/karthik/eos-docker/clion:/opt/clion
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /dev/snd:/dev/snd
+      - /home/karthik/eos-docker/clion-data:/root/.CLion2017.3/config
+    environment:
+      - DISPLAY=unix$DISPLAY
