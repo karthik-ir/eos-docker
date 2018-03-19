@@ -31,8 +31,17 @@ And with clion directory mapping as volume, you can spawn the IDE from within th
 `docker exec -it eosdocker_eosiod_1 clion.sh`
 
 Now the IDE runs within the container and you can do all your development in the IDE including running eosc commands in the 
-IDE terminal. 
+IDE terminal. From the terminal of the IDE
 
+Run : 
+`eoscpp -n {CONTRACT_NAME}` to create a contract scaffold. 
+Copy the CMakeLists.txt and Toolchain.cmake from /dev-tools to the contract folder, change the project name in the CMakeLists.txt. 
 
-For information on setting up the project scaffold, 
+Expected folder structure :
+Contract_Folder
+-src - Contains .cpp files
+-include - contains header files
+contain .abi file. 
+
+For information on setting up the project scaffold for working on clion, 
 refer to https://steemit.com/eos/@ukarlsson/eos-contracts-development-with-the-clion-ide. 
