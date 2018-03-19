@@ -1,4 +1,4 @@
-FROM huangminghuang/eos_builder as builder
+FROM huangminghuang/eos_builder
 
 LABEL author="Karthik <karthik.ir@outlook.com>" \
   maintainer="Karthik <karthik.ir@outlook.com>" \
@@ -35,6 +35,8 @@ RUN wget https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.tar.
     && cd .. 
 
 COPY ./start_eosd.sh /opt/eos/bin/start_eosd.sh
+COPY ./CMakeLists.txt /dev-tool/CMakeLists.txt
+COPY ./Toolchain.cmake /dev-tool/Toolchain.cmake
 
 RUN chmod +x /opt/eos/bin/start_eosd.sh
 
